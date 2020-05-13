@@ -1,30 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import { AppRoutingModule } from './app-routing.module';
-import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { ContactComponent } from './contact/contact.component';
-import { FormsModule } from '@angular/forms';
-import { ToastModule } from './toast/toast.module';
-import { LoginComponent } from './login/login.component'
+import { CalendarComponent } from './calendar/calendar.component';
 import { AppRoutes } from './app.routes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ContactComponent,
-    LoginComponent,
-  ],
+  declarations: [AppComponent, CalendarComponent, LoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule,
-    FormsModule,
-    ToastModule,
-    AppRoutes
-    
+    AppRoutes,
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

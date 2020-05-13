@@ -1,19 +1,37 @@
-<div class="login-grid">
-    <div></div>
-    <form class="login-form box-shadow">
-        <div class="form-group">
-          <label for="exampleInputEmail1">User Name</label>
-          <input name="username" [(ngModel)]="user.username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="User Name">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input name="password" [(ngModel)]="user.password" type="password" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-        </div>
-        <button type="submit" class="btn btn-primary" (click)="login(user)">Login</button>
-      </form>
-      <div></div>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h2 class="active">Sign In</h2>
+    <form>
+      <input
+        type="text"
+        id="login"
+        class="fadeIn second"
+        name="login"
+        placeholder="login"
+        #username
+      />
+      <input
+        type="text"
+        id="password"
+        class="fadeIn third"
+        name="login"
+        placeholder="password"
+        #password
+      />
+      <input
+        type="button"
+        (click)="
+          login({
+            username: username.value,
+            password: password.value
+          })
+        "
+        class="fadeIn fourth"
+        value="Log In"
+      />
+      <div class="errors" *ngIf="isError">
+        <span>{{ error }}</span>
+      </div>
+    </form>
+  </div>
 </div>
